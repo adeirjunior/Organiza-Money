@@ -1,21 +1,29 @@
 package me.adeir.organizamoney.controllers;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.RequiredArgsConstructor;
+import me.adeir.organizamoney.entities.Account;
+import me.adeir.organizamoney.services.AccountService;
 
 
 @RestController
 @RequestMapping("/accounts")
+@RequiredArgsConstructor
 public class AccountsController {
+    private final AccountService accountService;
     @GetMapping("/")
-    public String getAllAccounts() {
-        return "Lista de gastos!";
+    public List<Account> getAllAccounts() {
+        return accountService.findAll();
     }
 
     @PostMapping("/")
