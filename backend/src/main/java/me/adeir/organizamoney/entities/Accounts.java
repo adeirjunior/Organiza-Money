@@ -15,9 +15,15 @@ import me.adeir.organizamoney.util.Auditable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Category extends Auditable {
-    @Column(nullable = false, unique = true)
+public class Accounts extends Auditable {
+    @Column(nullable = false)
     private String name;
 
-    private String description;
+    @Column(nullable = false)
+    private Double balance;
+
+    @Column(nullable = false)
+    private String bank;
+
+    private String accountType; // Exemplo: Corrente, Poupança
 }

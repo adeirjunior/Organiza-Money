@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import me.adeir.organizamoney.entities.Transaction;
+import me.adeir.organizamoney.entities.Transactions;
 import me.adeir.organizamoney.repositories.TransactionRepository;
 
 @Service
@@ -13,11 +13,11 @@ import me.adeir.organizamoney.repositories.TransactionRepository;
 public class TransactionService {
     private final TransactionRepository transactionRepository;
 
-    public List<Transaction> findAll() {
+    public List<Transactions> findAll() {
         return transactionRepository.findAll();
     }
 
-    public Transaction add(Transaction transaction) {
+    public Transactions add(Transactions transaction) {
         return transactionRepository.save(transaction);
     }
 

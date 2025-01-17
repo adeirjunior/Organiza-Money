@@ -19,7 +19,7 @@ import me.adeir.organizamoney.util.Auditable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Transaction extends Auditable {
+public class Transactions extends Auditable {
     @Column(nullable = false)
     private String type; // "income" ou "expense"
 
@@ -34,11 +34,11 @@ public class Transaction extends Auditable {
 
     @ManyToOne
     @JoinColumn(name = "account_id", nullable = false)
-    private Account account;
+    private Accounts account;
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
+    private Categories category;
 
     private String description;
 }

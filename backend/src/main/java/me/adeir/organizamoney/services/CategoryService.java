@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import me.adeir.organizamoney.entities.Category;
+import me.adeir.organizamoney.entities.Categories;
 import me.adeir.organizamoney.repositories.CategoryRepository;
 
 @Service
@@ -13,11 +13,11 @@ import me.adeir.organizamoney.repositories.CategoryRepository;
 public class CategoryService {
     private final CategoryRepository categoryRepository;
     
-    public List<Category> findAll() {
+    public List<Categories> findAll() {
         return categoryRepository.findAll();
     }
 
-    public Category add(Category category) {
+    public Categories add(Categories category) {
         return categoryRepository.save(category);
     }
 

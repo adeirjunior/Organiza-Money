@@ -15,15 +15,9 @@ import me.adeir.organizamoney.util.Auditable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User extends Auditable {
-    @Column(nullable = false)
+public class Categories extends Auditable {
+    @Column(nullable = false, unique = true)
     private String name;
 
-    private String username;
-    private String email;
-    private String password;
-
-    private String profileImage;
-
-    private boolean active;
+    private String description;
 }

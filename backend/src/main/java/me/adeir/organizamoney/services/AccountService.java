@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import me.adeir.organizamoney.entities.Account;
+import me.adeir.organizamoney.entities.Accounts;
 import me.adeir.organizamoney.repositories.AccountRepository;
 
 @Service
@@ -13,11 +13,11 @@ import me.adeir.organizamoney.repositories.AccountRepository;
 public class AccountService {
     private final AccountRepository accountRepository;
     
-    public List<Account> findAll() {
+    public List<Accounts> findAll() {
         return accountRepository.findAll();
     }
 
-    public Account add(Account account) {
+    public Accounts add(Accounts account) {
         return accountRepository.save(account);
     }
 

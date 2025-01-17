@@ -3,12 +3,12 @@ package me.adeir.organizamoney.mapper;
 import me.adeir.organizamoney.dto.user.UserAddDTO;
 import me.adeir.organizamoney.dto.user.UserEditDTO;
 import me.adeir.organizamoney.dto.user.UserGetDTO;
-import me.adeir.organizamoney.entities.User;
+import me.adeir.organizamoney.entities.Users;
 import me.adeir.organizamoney.repositories.UserRepository;
 
 public class UserMapper {
-    public static User toUser(UserAddDTO userAddDTO) {
-        User usuario = new User();
+    public static Users toUser(UserAddDTO userAddDTO) {
+        Users usuario = new Users();
         usuario.setName(userAddDTO.getName());
         usuario.setUsername(userAddDTO.getUsername());
         usuario.setEmail(userAddDTO.getEmail());
@@ -18,8 +18,8 @@ public class UserMapper {
         return usuario;
     }
 
-    public static User toUser(Long id, UserEditDTO userEditDTO, UserRepository userRepository) {
-        User usuario = userRepository.findById(id).orElseThrow();
+    public static Users toUser(Long id, UserEditDTO userEditDTO, UserRepository userRepository) {
+        Users usuario = userRepository.findById(id).orElseThrow();
         usuario.setName(userEditDTO.getName());
         usuario.setUsername(userEditDTO.getUsername());
         usuario.setEmail(userEditDTO.getEmail());
@@ -28,7 +28,7 @@ public class UserMapper {
         return usuario;
     }
 
-    public static UserGetDTO toUserGetDTO(User user) {
+    public static UserGetDTO toUserGetDTO(Users user) {
         UserGetDTO userGetDTO = new UserGetDTO();
         userGetDTO.setName(user.getName());
         userGetDTO.setUsername(user.getPassword());
